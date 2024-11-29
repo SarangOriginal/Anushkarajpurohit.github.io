@@ -1,0 +1,7 @@
+[
+    { "Species": "Dogs","name": "German Shepherd", "image": "assets/images/german_shepherd.jpg", "location": "Germany", "size": 40 },
+    { "Species": "Dogs","name": "Labrador", "image": "assets/images/labrador.jpg", "location": "Canada", "size": 35 },
+    { "Species": "Dogs","name": "Beagle", "image": "assets/images/beagle.jpg", "location": "UK", "size": 25 },
+    { "Species": "Dogs","name": "Bulldog", "image": "assets/images/bulldog.jpg", "location": "England", "size": 30 }
+  ]
+  

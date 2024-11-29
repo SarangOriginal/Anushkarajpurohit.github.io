@@ -1,0 +1,45 @@
+body{
+     height: 200px;
+  background-color: rgba(255, 0, 0, 0.041); 
+  background-image: linear-gradient(rgba(157, 255, 0, 0.055), yellow);
+}
+.animal-image{
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#dogs-table td:first-child {
+    font-weight: bold;
+}
+#bigfish-table td:first-child{
+    font-style: italic;
+    color: royalblue ;
+    font-weight: bold;
+}
+.animal-image-container {
+    position: relative;
+    display: inline-block;
+    border: 3px solid #ccc; 
+    padding: 10px;
+    margin: 10px;
+    transition: transform 0.3s ease; 
+  }
+  
+  .animal-image-container:hover {
+    transform: scale(1.6); 
+    z-index: 200;
+  }
+  
+
+  .animal-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+ 

@@ -1,0 +1,7 @@
+[
+    { "Species": "Big Cats","name": "Lion", "image": "assets/images/lion.jpg", "location": "Africa", "size": 250 },
+    { "Species": "Big Cats","name": "Tiger", "image": "assets/images/tiger.jpg", "location": "Asia", "size": 220 },
+    { "Species": "Big Cats","name": "Leopard", "image": "assets/images/leopard.jpg", "location": "Africa", "size": 150 },
+    { "Species": "Big Cats","name": "Jaguar", "image": "assets/images/jaguar.jpg", "location": "South America", "size": 200 }
+  ]
+  

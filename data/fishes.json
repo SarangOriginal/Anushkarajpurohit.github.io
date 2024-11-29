@@ -1,0 +1,7 @@
+[
+    { "Species": "Big Fish","name": "Shark", "image": "assets/images/shark.jpg", "location": "Oceans", "size": 1000 },
+    { "Species": "Big Fish","name": "Dolphin", "image": "assets/images/dolphin.jpg", "location": "Oceans", "size": 300 },
+    { "Species": "Big Fish","name": "Whale", "image": "assets/images/whale.jpg", "location": "Oceans", "size": 30000 },
+    { "Species": "Big Fish","name": "Marlin", "image": "assets/images/marlin.jpg", "location": "Oceans", "size": 600 }
+  ]
+  
