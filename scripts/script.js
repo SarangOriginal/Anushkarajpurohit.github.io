@@ -111,10 +111,7 @@ class Bigcats extends Animal {
     super(catsData, "bigcats-table", ["name"]);
   }
 
-  static editAnimal(index) {
-    // Implement edit logic here if required
-    alert(`Editing animal at index ${index}`);
-  }
+
 }
 
 class Dogs extends Animal {
@@ -148,21 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
     addAnimalButton.addEventListener('click', function() {
       window.dogs.addAnimal();
     });
-  }
-});
-
-
-// Image preview on file upload
-document.getElementById('animalImageFile').addEventListener('change', function (event) {
-  const file = event.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const imagePreview = document.getElementById('imagePreview');
-      imagePreview.src = e.target.result;
-      imagePreview.style.display = 'block';
-    };
-    reader.readAsDataURL(file);
   }
 });
 
