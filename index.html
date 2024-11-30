@@ -18,24 +18,25 @@
       font-style: italic;
       color: blue;
     }
+    
   </style>
   <script src="./scripts/script.js" ></script>
 </head>
 <body>
 
-    <div class="container mt-5">
+    <div class="container mt-5" id="main-div">
     <section>
-      <h1 class="text-center">Big Cats</h1>
+      <h1>Big Cats</h1>
       <div class="text-end mb-3">
         <button class="btn btn-primary" onclick="bigcats.addAnimal()">Add Animal</button>
       </div>
-      <table class="table table-bordered" id="bigcats-table">
-        <thead>
-          <tr >
-            <th onclick="bigcats.sortAnimals('name')" >Name<p>Click to sort</p></th>
+      <table class="table table-bordered table-hover" id="bigcats-table">
+        <thead class="thead-dark">
+          <tr style="background-color: rgb(233, 247, 155);">
+            <th " onclick="bigcats.sortAnimals('name')" >Name<p>Click to sort</p></th>
             <th>Image</th>
-            <th onclick="bigcats.sortAnimals('location')">Location<p>Click to sort</p></th>
-            <th onclick="bigcats.sortAnimals('size')">Size<p>Click to sort</p></th>
+            <th onclick="bigcats.sortAnimals('location')">Location<p id="sortFeature">[Click to sort]</p></th>
+            <th onclick="bigcats.sortAnimals('size')">Size<p id="sortFeature">Click to sort</p></th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -43,16 +44,16 @@
       </table>
       </section>
       <section>
-        <h1 class="text-center">Dogs</h1>
-        <div class="text-end mb-3">
+        <h1>Dogs</h1>
+        <div class="text-end mb-3" >
           <button class="btn btn-primary" onclick="dogs.addAnimal()">Add Animal</button>
         </div>
-        <table class="table table-bordered" id="dogs-table">
+        <table class="table table-bordered table-hover" id="dogs-table">
           <thead>
             <tr>
-                <th onclick="dogs.sortAnimals('name')">Name<p>[Click to sort]</p></th>
+                <th onclick="dogs.sortAnimals('name')">Name<p id="sortFeature">[Click to sort]</p></th>
               <th>Image</th>
-              <th onclick="dogs.sortAnimals('location')">Location<p>[Click to sort]</p></th>
+              <th onclick="dogs.sortAnimals('location')">Location<p id="sortFeature">[Click to sort]</p></th>
               <th>Size (kg)</th>
               <th>Actions</th>
             </tr>
@@ -61,17 +62,17 @@
         </table>
         </section>
         <section>
-            <h1 class="text-center">Big Fish</h1>
+            <h1>Big Fish</h1>
             <div class="text-end mb-3">
               <button class="btn btn-primary" onclick="bigfish.addAnimal()">Add Animal</button>
             </div>
-            <table class="table table-bordered" id="bigfish-table">
+            <table class="table table-bordered table-hover" id="bigfish-table">
               <thead>
                 <tr>
                   <th>Name</th>
                   <th>Image</th>
                   <th>Location</th>
-                  <th onclick="bigfish.sortAnimals('size')">Size<p>[Click to sort]</p></th>
+                  <th onclick="bigfish.sortAnimals('size')">Size<p id="sortFeature">[Click to sort]</p></th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -79,8 +80,6 @@
             </table>
             </section>
     </div>
-    
-    <!-- Modal for adding animals -->
     
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
