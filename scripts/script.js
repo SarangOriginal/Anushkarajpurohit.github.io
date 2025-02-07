@@ -1,23 +1,23 @@
 const catsData = [
-  { name: "Minu", image: "Assets/images/minu.jpg", location: "Nu", size: 47 },
-  { name: "Lion", image: "Assets/images/lion.jpg", location: "Africa", size: 250 },
-  { name: "Tiger", image: "Assets/images/tiger.jpg", location: "Asia", size: 220 },
-  { name: "Leopard", image: "Assets/images/leopard.jpg", location: "Africa", size: 150 },
-  { name: "Jaguar", image: "Assets/images/jaguar.jpg", location: "South America", size: 200 }
+  { name: "Minu", image: "https://sarangoriginal.github.io/Anushkarajpurohit.github.io/Assets/images/minu.jpg", location: "Nu", size: 47 },
+  { name: "Lion", image: "https://sarangoriginal.github.io/Anushkarajpurohit.github.io/Assets/images/lion.jpg", location: "Africa", size: 250 },
+  { name: "Tiger", image: "https://sarangoriginal.github.io/Anushkarajpurohit.github.io/Assets/images/tiger.jpg", location: "Asia", size: 220 },
+  { name: "Leopard", image: "https://sarangoriginal.github.io/Anushkarajpurohit.github.io/Assets/images/leopard.jpg", location: "Africa", size: 150 },
+  { name: "Jaguar", image: "https://sarangoriginal.github.io/Anushkarajpurohit.github.io/Assets/images/jaguar.jpg", location: "South America", size: 200 }
 ];
 
 const dogsData = [
-  { "Species": "Dogs", "name": "German Shepherd", "image": "Assets/images/german_sheopard.jpg", "location": "Germany", "size": 40 },
-  { "Species": "Dogs", "name": "Labrador", "image": "Assets/images/labrador.jpg", "location": "Canada", "size": 35 },
-  { "Species": "Dogs", "name": "Beagle", "image": "Assets/images/beagle.jpg", "location": "UK", "size": 25 },
-  { "Species": "Dogs", "name": "Bulldog", "image": "Assets/images/bulldog.jpg", "location": "England", "size": 30 }
+  { "Species": "Dogs", "name": "German Shepherd", "image": "https://sarangoriginal.github.io/Anushkarajpurohit.github.io/Assets/images/german_sheopard.jpg", "location": "Germany", "size": 40 },
+  { "Species": "Dogs", "name": "Labrador", "image": "https://sarangoriginal.github.io/Anushkarajpurohit.github.io/Assets/images/labrador.jpg", "location": "Canada", "size": 35 },
+  { "Species": "Dogs", "name": "Beagle", "image": "https://sarangoriginal.github.io/Anushkarajpurohit.github.io/Assets/images/beagle.jpg", "location": "UK", "size": 25 },
+  { "Species": "Dogs", "name": "Bulldog", "image": "https://sarangoriginal.github.io/Anushkarajpurohit.github.io/Assets/images/bulldog.jpg", "location": "England", "size": 30 }
 ];
 
 const fishData = [
-  { "Species": "Big Fish", "name": "Shark", "image": "Assets/images/shark.jpg", "location": "Oceans", "size": 1000 },
-  { "Species": "Big Fish", "name": "Dolphin", "image": "Assets/images/dolphin.jpg", "location": "Oceans", "size": 300 },
-  { "Species": "Big Fish", "name": "Whale", "image": "Assets/images/whale.jpg", "location": "Oceans", "size": 30000 },
-  { "Species": "Big Fish", "name": "Marlin", "image": "Assets/images/marlin.jpg", "location": "Oceans", "size": 600 }
+  { "Species": "Big Fish", "name": "Shark", "image": "https://sarangoriginal.github.io/Anushkarajpurohit.github.io/Assets/images/shark.jpg", "location": "Oceans", "size": 1000 },
+  { "Species": "Big Fish", "name": "Dolphin", "image": "https://sarangoriginal.github.io/Anushkarajpurohit.github.io/Assets/images/dolphin.jpg", "location": "Oceans", "size": 300 },
+  { "Species": "Big Fish", "name": "Whale", "image": "https://sarangoriginal.github.io/Anushkarajpurohit.github.io/Assets/images/whale.jpg", "location": "Oceans", "size": 30000 },
+  { "Species": "Big Fish", "name": "Marlin", "image": "https://sarangoriginal.github.io/Anushkarajpurohit.github.io/Assets/images/marlin.jpg", "location": "Oceans", "size": 600 }
 ];
 
 class Animal {
