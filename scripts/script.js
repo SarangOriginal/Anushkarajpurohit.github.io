@@ -1,5 +1,5 @@
 const catsData = [
-  { name: "Minu", image: "../Assets/images/minu.jpg", location: "Nu", size: 47 },
+  { name: "Minu", image: "./Assets/images/minu.jpg", location: "Nu", size: 47 },
   { name: "Lion", image: "../Assets/images/lion.jpg", location: "Africa", size: 250 },
   { name: "Tiger", image: "../Assets/images/tiger.jpg", location: "Asia", size: 220 },
   { name: "Leopard", image: "../Assets/images/leopard.jpg", location: "Africa", size: 150 },
