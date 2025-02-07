@@ -1,5 +1,6 @@
 const catsData = [
-  { name: "Lion", image: "../Assets/images/lion.jpg", location: "Africa", size: 250 },
+  { name: "Minu", image: "assets/images/minu.jpg", location: "Nu", size: 47 },
+  { name: "Lion", image: "assets/images/lion.jpg", location: "Africa", size: 250 },
   { name: "Tiger", image: "assets/images/tiger.jpg", location: "Asia", size: 220 },
   { name: "Leopard", image: "assets/images/leopard.jpg", location: "Africa", size: 150 },
   { name: "Jaguar", image: "assets/images/jaguar.jpg", location: "South America", size: 200 }
@@ -20,10 +21,9 @@ const fishData = [
 ];
 
 class Animal {
-  constructor(animals, tableId, sortfields) {
+  constructor(animals, tableId) {
     this.animals = animals;
     this.tableId = tableId;
-    this.sortfields = sortfields;
     this.renderTable();
   }
 
@@ -33,15 +33,10 @@ class Animal {
     this.animals.forEach((animal, index) => {
       const row = document.createElement("tr");
       row.innerHTML = `
-        <td >${animal.name}</td>
-        <td>
-          <div class="animal-image-container">
-            <img src="${animal.image}" class="animal-image" alt="${animal.name}">
-            <div class="animal-name">${animal.name}</div>
-          </div>
-        </td>
+        <td>${animal.name}</td>
+        <td><img src="${animal.image}" class="animal-image" alt="${animal.name}" width="50"></td>
         <td>${animal.location}</td>
-        <td>${animal.size || ""} kg</td>
+        <td>${animal.size} kg</td>
         <td>
           <button class="btn btn-warning btn-sm" onclick="window.${this.getClassName()}.editAnimal(${index})">Edit</button>
           <button class="btn btn-danger btn-sm" onclick="window.${this.getClassName()}.deleteAnimal(${index})">Delete</button>
@@ -50,38 +45,21 @@ class Animal {
       tbody.appendChild(row);
     });
   }
-  
+
   addAnimal() {
-    const name = prompt("Add a new animal name:");
-    const location = prompt("Add a new animal location:");
-    const size = prompt("Add a new animal size in kg:");
+    const name = prompt("Enter animal name:");
+    const location = prompt("Enter location:");
+    const size = prompt("Enter size in kg:");
 
     if (!name || !location || isNaN(size)) {
-      alert("Invalid inputs!");
+      alert("Invalid input!");
       return;
     }
 
-    if (this.animals.some(animal => animal.name === name)) {
-      alert("Duplicate animal!");
-      return;
-    }
-
-    const newAnimal = { name, image: "assets/images/default.png", location, size: Number(size) };
-    this.animals.push(newAnimal);
+    this.animals.push({ name, image: "assets/images/default.png", location, size: Number(size) });
     this.renderTable();
   }
 
-  sortAnimals(field) {
-    if (field === "size") {
-      this.animals.sort((a, b) => a.size - b.size);
-    } else if (field === "name") {
-      this.animals.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (field === "location") {
-      this.animals.sort((a, b) => a.location.localeCompare(b.location));
-    }
-    this.renderTable();
-  }
-  
   editAnimal(index) {
     const animal = this.animals[index];
     const name = prompt("Enter new name:", animal.name);
@@ -96,6 +74,7 @@ class Animal {
     this.animals[index] = { ...animal, name, location, size: Number(size) };
     this.renderTable();
   }
+
   deleteAnimal(index) {
     this.animals.splice(index, 1);
     this.renderTable();
@@ -108,31 +87,19 @@ class Animal {
 
 class Bigcats extends Animal {
   constructor() {
-    super(catsData, "bigcats-table", ["name"]);
+    super(catsData, "bigcats-table");
   }
-
-
 }
 
 class Dogs extends Animal {
   constructor() {
-    super(dogsData, "dogs-table", ["name", "location"]);
-  }
-
-  static editAnimal(index) {
-    // Implement edit logic here if required
-    alert(`Editing animal at index ${index}`);
+    super(dogsData, "dogs-table");
   }
 }
 
 class Bigfish extends Animal {
   constructor() {
-    super(fishData, "bigfish-table", ["size"]);
-  }
-
-  static editAnimal(index) {
-    // Implement edit logic here if required
-    alert(`Editing animal at index ${index}`);
+    super(fishData, "bigfish-table");
   }
 }
 
@@ -140,11 +107,15 @@ document.addEventListener("DOMContentLoaded", function () {
   window.bigcats = new Bigcats();
   window.dogs = new Dogs();
   window.bigfish = new Bigfish();
-  const addAnimalButton = document.querySelector('#dogs-table .btn-primary');
-  if (addAnimalButton) {
-    addAnimalButton.addEventListener('click', function() {
-      window.dogs.addAnimal();
-    });
-  }
-});
 
+  // Event listeners for Add buttons
+  document.querySelector("#addBigCatBtn").addEventListener("click", function () {
+    window.bigcats.addAnimal();
+  });
+  document.querySelector("#addDogBtn").addEventListener("click", function () {
+    window.dogs.addAnimal();
+  });
+  document.querySelector("#addFishBtn").addEventListener("click", function () {
+    window.bigfish.addAnimal();
+  });
+});

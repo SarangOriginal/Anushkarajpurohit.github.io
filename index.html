@@ -1,89 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Animal Tables</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./Assets/images/styling/main.css"  ><style>
+  <script src="scripts/script.js" defer></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .table-container {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      background-color: #c4c4c4;
+      color: #ffffff;
+      text-align: center;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    th:hover {
+      background-color: #c4c4c4;
+    }
+
+    td {
+      text-align: center;
+      vertical-align: middle;
+      padding: 10px;
+    }
+
+    tbody tr:hover {
+      background-color: #f1f3f5;
+      transition: background 0.3s;
+    }
+
     .hover-img:hover {
       transform: scale(1.2);
+      transition: 0.3s;
       border: 2px solid #000;
     }
-    .name-bold {
-      font-weight: bold;
-    }
-    .name-blue {
-      font-weight: bold;
-      font-style: italic;
-      color: blue;
-    }
-    
-  </style>
-  <script src="./scripts/script.js" ></script>
-</head>
-<body>
 
-    <div class="container mt-5" id="main-div">
-    <section>
+    .btn-primary {
+      background-color: #28a745;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #218838;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    tbody tr {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <section class="table-container">
       <h1>Big Cats</h1>
       <div class="text-end mb-3">
-        <button class="btn btn-primary" onclick="bigcats.addAnimal()">Add Animal</button>
+        <button class="btn btn-primary" id="addBigCatBtn">Add Animal</button>
       </div>
       <table class="table table-bordered table-hover" id="bigcats-table">
-        <thead class="thead-dark">
-          <tr style="background-color: rgb(233, 247, 155);">
-            <th " onclick="bigcats.sortAnimals('name')" >Name<p id="sortFeature">Click to sort</p></th>
+        <thead>
+          <tr>
+            <th onclick="sortAnimals('bigcats-table', 'name')">Name</th>
             <th>Image</th>
-            <th onclick="bigcats.sortAnimals('location')">Location<p id="sortFeature">[Click to sort]</p></th>
-            <th onclick="bigcats.sortAnimals('size')">Size<p id="sortFeature">Click to sort</p></th>
+            <th onclick="sortAnimals('bigcats-table', 'location')">Location</th>
+            <th onclick="sortAnimals('bigcats-table', 'size')">Size</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
-      </section>
-      <section>
-        <h1>Dogs</h1>
-        <div class="text-end mb-3" >
-          <button class="btn btn-primary" onclick="dogs.addAnimal()">Add Animal</button>
-        </div>
-        <table class="table table-bordered table-hover" id="dogs-table">
-          <thead>
-            <tr>
-                <th onclick="dogs.sortAnimals('name')">Name<p id="sortFeature">[Click to sort]</p></th>
-              <th>Image</th>
-              <th onclick="dogs.sortAnimals('location')">Location<p id="sortFeature">[Click to sort]</p></th>
-              <th>Size (kg)</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-        </section>
-        <section>
-            <h1>Big Fish</h1>
-            <div class="text-end mb-3">
-              <button class="btn btn-primary" onclick="bigfish.addAnimal()">Add Animal</button>
-            </div>
-            <table class="table table-bordered table-hover" id="bigfish-table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Image</th>
-                  <th>Location</th>
-                  <th onclick="bigfish.sortAnimals('size')">Size<p id="sortFeature">[Click to sort]</p></th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-            </section>
-    </div>
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="./scripts/script.js"></script>
-    
-    </body>
-    </html>
+    </section>
+    <section class="table-container">
+      <h1>Dogs</h1>
+      <div class="text-end mb-3">
+        <button class="btn btn-primary" id="addDogBtn">Add Animal</button>
+      </div>
+      <table class="table table-bordered table-hover" id="dogs-table">
+        <thead>
+          <tr>
+            <th onclick="sortAnimals('dogs-table', 'name')">Name</th>
+            <th>Image</th>
+            <th onclick="sortAnimals('dogs-table', 'location')">Location</th>
+            <th>Size (kg)</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+    <section class="table-container">
+      <h1>Big Fishes</h1>
+      <div class="text-end mb-3">
+        <button class="btn btn-primary" id="addFishBtn">Add Animal</button>
+      </div>
+      <table class="table table-bordered table-hover" id="bigfish-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Location</th>
+            <th onclick="sortAnimals('bigfish-table', 'size')">Size</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+</body>
+
+</html>
